@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Casket Seller Hitesh</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Casket Seller Hitesh</string>
+    <string name="login">Sign in</string>
+    <string name="search_caskets">Search Caskets</string>
+    <string name="back">Back to Search</string>
+    <string name="sell">Sell this casket</string>
+    <string name="save">Record Sale</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="error">Incorrect user name or password</string>
+    <string name="title_activity_search_screen">Search for caskets</string>
+    <string name="price_from">Price from</string>
+    <string name="price_to">to</string>
+    <string name="casket_name">Casket name</string>
+    <string name="external_material">External Material</string>
+    <string name="internal_material">Internal Material</string>
+    <string name="title_activity_caskets_display">Caskets</string>
+
+</resources>
