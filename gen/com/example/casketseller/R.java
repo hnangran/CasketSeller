@@ -14,18 +14,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int btnSubmit=0x7f070009;
-        public static final int button1=0x7f07000a;
-        public static final int buttonlogin=0x7f070003;
-        public static final int error=0x7f070000;
-        public static final int extMaterialSpinner=0x7f070004;
-        public static final int intMaterialSpinner=0x7f070005;
-        public static final int menu_settings=0x7f07000b;
-        public static final int name=0x7f070008;
-        public static final int password=0x7f070002;
-        public static final int price_from=0x7f070006;
-        public static final int price_to=0x7f070007;
-        public static final int username=0x7f070001;
+        public static final int btnRecordSale=0x7f070004;
+        public static final int btnSubmit=0x7f07000e;
+        public static final int button1=0x7f07000f;
+        public static final int buttonlogin=0x7f070008;
+        public static final int casketsList=0x7f070001;
+        public static final int centerCasket=0x7f070002;
+        public static final int centerCasketDetails=0x7f070003;
+        public static final int error=0x7f070005;
+        public static final int extMaterialSpinner=0x7f070009;
+        public static final int intMaterialSpinner=0x7f07000a;
+        public static final int menu_settings=0x7f070010;
+        public static final int name=0x7f07000d;
+        public static final int password=0x7f070007;
+        public static final int price_from=0x7f07000b;
+        public static final int price_to=0x7f07000c;
+        public static final int username=0x7f070006;
+        public static final int xCasketsFound=0x7f070000;
     }
     public static final class layout {
         public static final int activity_caskets_display=0x7f030000;
@@ -51,9 +56,9 @@ public final class R {
         public static final int password=0x7f040009;
         public static final int price_from=0x7f04000c;
         public static final int price_to=0x7f04000d;
+        public static final int record_sale=0x7f040006;
         public static final int save=0x7f040007;
         public static final int search_caskets=0x7f040004;
-        public static final int sell=0x7f040006;
         public static final int title_activity_caskets_display=0x7f040011;
         public static final int title_activity_main=0x7f040002;
         public static final int title_activity_search_screen=0x7f04000b;

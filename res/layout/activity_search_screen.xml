@@ -17,10 +17,6 @@
             android:id="@+id/extMaterialSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <!-- android:entries="@array/country_arrays" -->
-        <!-- android:prompt="@string/country_prompt" /> -->
-
     </TableRow>
 
     <TableRow>

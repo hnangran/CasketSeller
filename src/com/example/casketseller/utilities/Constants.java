@@ -2,6 +2,8 @@ package com.example.casketseller.utilities;
 
 public class Constants {
 
+  public static String xCasketsFound = "Caskets found";
+  
   public enum Activities {
     
     searchScreen ("com.example.casketseller.activities.SearchScreen"),

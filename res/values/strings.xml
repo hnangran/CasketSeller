@@ -3,11 +3,11 @@
 
     <string name="app_name">Casket Seller Hitesh</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">Casket Seller Hitesh</string>
+    <string name="title_activity_main">Casket Seller Thread</string>
     <string name="login">Sign in</string>
     <string name="search_caskets">Search Caskets</string>
     <string name="back">Back to Search</string>
-    <string name="sell">Sell this casket</string>
+    <string name="record_sale">Record Sale</string>
     <string name="save">Record Sale</string>
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
