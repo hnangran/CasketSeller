@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ 
+     <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-    <TableRow>
-
-        <TextView
-            android:id="@+id/xCasketsFound"
+        <LinearLayout
+            android:id="@+id/mygallery"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-    </TableRow>
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" />
+        
+    </HorizontalScrollView>
+     
+    <ImageView
+        android:id="@+id/centerCasket"
+        android:layout_width="match_parent"
+        android:layout_height="396dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_weight="0.40" 
+        android:layout_marginBottom="0dp"/>
 
-    <TableRow>
+    <TextView
+        android:id="@+id/centerCasketDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginBottom="20dp" />
 
-        <Gallery
-            android:id="@+id/casketsList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </TableRow>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Record Sales" />
 
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/centerCasket"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/centerCasketDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-    </TableRow>
-
-    <TableRow>
-
-        <Button
-            android:id="@+id/btnRecordSale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onRecordSale"
-            android:text="@string/record_sale" />
-    </TableRow>
-
-</TableLayout>
+</LinearLayout>

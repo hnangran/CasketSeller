@@ -1,323 +1,117 @@
-//package com.example.casketseller.activities;
-//
-//import java.io.ByteArrayInputStream;
-//import java.io.ByteArrayOutputStream;
-//import java.io.File;
-//import java.io.FileInputStream;
-//import java.io.IOException;
-//import java.io.InputStream;
-//import java.net.MalformedURLException;
-//import java.net.URL;
-//import java.util.ArrayList;
-//
-//import com.example.casketseller.R;
-//import com.example.casketseller.R.layout;
-//import com.example.casketseller.R.menu;
-//import com.example.casketseller.utilities.AndroidUtilities;
-//import com.example.casketseller.utilities.CasketDownloader;
-//import com.example.casketseller.utilities.Constants;
-//import com.example.casketseller.utilities.ImageDownloader;
-//
-//import android.net.Uri;
-//import android.os.Bundle;
-//import android.app.Activity;
-//import android.app.ProgressDialog;
-//import android.content.Context;
-//import android.graphics.Bitmap;
-//import android.graphics.BitmapFactory;
-//import android.graphics.drawable.BitmapDrawable;
-//import android.graphics.drawable.Drawable;
-//import android.view.Menu;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.view.ViewGroup.LayoutParams;
-//import android.widget.AdapterView;
-//import android.widget.AdapterView.OnItemClickListener;
-//import android.widget.BaseAdapter;
-//import android.widget.Gallery;
-//import android.widget.ImageSwitcher;
-//import android.widget.ImageView;
-//import android.widget.RelativeLayout;
-//import android.widget.SpinnerAdapter;
-//import android.widget.TextView;
-//import android.widget.ViewSwitcher.ViewFactory;
-//
-//public class CasketsDisplay extends Activity implements ViewFactory {
-//
-//  ArrayList<Bitmap> casketImages;
-//
-//  final CasketDownloader c = new CasketDownloader();
-//
-//  @Override
-//  protected void onCreate(Bundle savedInstanceState) {
-//
-//    super.onCreate(savedInstanceState);
-//
-//    setContentView(R.layout.activity_caskets_display);
-//
-//    casketImages = CasketDownloader.getCasketImages();
-//
-//    TextView xCasketsFound = (TextView) findViewById(R.id.xCasketsFound);
-//    xCasketsFound.setText("" + casketImages.size() + " " + Constants.xCasketsFound);
-//    
-//    initializeGallery();
-//    initializeImageView();
-//  }
-//
-//  private void initializeGallery() {
-//
-//    // get reference to gallery
-//    Gallery casketsList = (Gallery) findViewById(R.id.casketsList);
-//
-//    casketImages = c.getCasketImages();
-//
-//    // set adapter to handle images
-//    casketsList.setAdapter(new ImageAdapter(this));
-//
-//    casketsList.setSpacing(10);
-//
-//    // set event handler
-//    casketsList.setOnItemClickListener(new OnItemClickListener() {
-//      public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-//
-//        ImageView centerCasket = (ImageView) findViewById(R.id.centerCasket);
-//        centerCasket.setImageBitmap(casketImages.get(position));
-//
-//      }
-//    });
-//
-//  }
-//
-//  private void initializeImageView() {
-//    ImageView centerCasket = (ImageView) findViewById(R.id.centerCasket);
-//    centerCasket.setImageBitmap(casketImages.get(0));
-//  }
-//
-//  @Override
-//  public boolean onCreateOptionsMenu(Menu menu) {
-//    // Inflate the menu; this adds items to the action bar if it is present.
-//    getMenuInflater().inflate(R.menu.activity_caskets_display, menu);
-//    return true;
-//  }
-//
-//  @Override
-//  public View makeView() {
-//
-//    ImageView centerImage = new ImageView(this);
-//    centerImage.setBackgroundColor(0xFF000000);
-//    centerImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
-//    centerImage.setLayoutParams(new ImageSwitcher.LayoutParams(LayoutParams.FILL_PARENT,
-//            LayoutParams.FILL_PARENT));
-//
-//    return centerImage;
-//
-//  }
-//
-//  class ImageAdapter extends BaseAdapter {
-//
-//    private Context context;
-//
-//    ImageAdapter(Context c) {
-//      super();
-//      context = c;
-//    }
-//
-//    @Override
-//    public int getCount() {
-//      return casketImages.size();
-//    }
-//
-//    @Override
-//    public Object getItem(int position) {
-//      return position;
-//    }
-//
-//    @Override
-//    public long getItemId(int position) {
-//      return position;
-//    }
-//
-//    @Override
-//    public View getView(int position, View v, ViewGroup vg) {
-//
-//      ImageView view = null;
-//
-//      if (v == null) {
-//        view = new ImageView(context);
-//        view.setImageBitmap(casketImages.get(position));
-//        view.setLayoutParams(new Gallery.LayoutParams(150, 120));
-//        view.setScaleType(ImageView.ScaleType.FIT_XY);
-//        RelativeLayout borderImg = new RelativeLayout(context);
-//        borderImg.setPadding(1, 1, 1, 1);
-//        borderImg.setBackgroundColor(0xff000000);
-//        borderImg.addView(view);
-//        return borderImg;
-//      } else
-//        view = (ImageView) v;
-//
-//      return view;
-//    }
-//  }
-//}
-
 package com.example.casketseller.activities;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import com.example.casketseller.R;
-import com.example.casketseller.R.layout;
-import com.example.casketseller.R.menu;
 import com.example.casketseller.backend.Casket;
 import com.example.casketseller.utilities.AndroidUtilities;
 import com.example.casketseller.utilities.CasketDownloader;
-import com.example.casketseller.utilities.Constants;
-import com.example.casketseller.utilities.ImageDownloader;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageSwitcher;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.SpinnerAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ViewSwitcher.ViewFactory;
 
-public class CasketsDisplay extends Activity implements ViewFactory {
 
-  ArrayList<Casket> caskets;
+public class CasketsDisplay extends Activity {
 
-  final CasketDownloader c = new CasketDownloader();
+	ArrayList<Casket> caskets;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
+	final CasketDownloader c = new CasketDownloader();
 
-    super.onCreate(savedInstanceState);
+	LinearLayout myGallery;
 
-    setContentView(R.layout.activity_caskets_display);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
 
-    caskets = CasketDownloader.getCaskets();
+		super.onCreate(savedInstanceState);
 
-    TextView xCasketsFound = (TextView) findViewById(R.id.xCasketsFound);
-    xCasketsFound.setText("" + caskets.size() + " " + Constants.xCasketsFound);
-    
-    initializeGallery();
-    initializeImageView();
-  }
+		setContentView(R.layout.activity_caskets_display);
 
-  private void initializeGallery() {
+		caskets = CasketDownloader.getCaskets();
 
-    // get reference to gallery
-    Gallery casketsList = (Gallery) findViewById(R.id.casketsList);
+		myGallery = (LinearLayout) findViewById(R.id.mygallery);
+		for (Casket cas : CasketDownloader.getCaskets()) {
 
-    // set adapter to handle images
-    casketsList.setAdapter(new ImageAdapter(this));
+			myGallery.addView(insertPhoto(cas));
 
-    casketsList.setSpacing(10);
+		}
+		LinearLayout layout = new LinearLayout(getApplicationContext());
+		layout.setOrientation(1);
+		layout.setLayoutParams(new LayoutParams(70, 50));
+		layout.setGravity(Gravity.CENTER);
+		Button b = new Button(getApplicationContext());
+		b.setText("...");
+		b.setGravity(Gravity.CENTER);
+		b.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            }
+        });
+		layout.addView(b);
+		myGallery.addView(layout);		
+		initializeImageView(caskets.get(0));
+	}
 
-    // set event handler
-    casketsList.setOnItemClickListener(new OnItemClickListener() {
-      public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-        AndroidUtilities.setBitmapToImageView((ImageView) findViewById(R.id.centerCasket), caskets.get(position).getImage());
-        TextView centerCasketDetails = (TextView) findViewById(R.id.centerCasketDetails);
-        centerCasketDetails.setText(caskets.get(position).getExteriorMaterial() + " " + caskets.get(position).getPrice());
-      }
-    });
+	private void initializeImageView(Casket cas) {
+		AndroidUtilities.setBitmapToImageView(
+				(ImageView) findViewById(R.id.centerCasket), cas.getImage());
+    	TextView centerCasketDetails = (TextView) findViewById(R.id.centerCasketDesc);
+    	centerCasketDetails.setText(cas.getName() + ", " + 
+				cas.getExteriorMaterial() + ", $" + cas.getPrice());
+	}
 
-  }
+	View insertPhoto(final Casket cas) {
+		final Bitmap bm = cas.getImage();
+		LinearLayout layout = new LinearLayout(getApplicationContext());
+		layout.setOrientation(1);
+		layout.setLayoutParams(new LayoutParams(120, 120));
+		layout.setGravity(Gravity.CENTER);
 
-  private void initializeImageView() {
-    AndroidUtilities.setBitmapToImageView((ImageView) findViewById(R.id.centerCasket), caskets.get(0).getImage());
-    TextView centerCasketDetails = (TextView) findViewById(R.id.centerCasketDetails);
-    centerCasketDetails.setText(caskets.get(0).getExteriorMaterial() + " " + caskets.get(0).getPrice());
-  }
+		ImageView imageView = new ImageView(getApplicationContext());
+		imageView.setLayoutParams(new LayoutParams(110, 80));
+		imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+		imageView.setImageBitmap(bm);
+		imageView.setPadding(imageView.getPaddingLeft(), 5, imageView.getPaddingRight(),1 );
+		layout.addView(imageView);
+		TextView textView = new TextView(getApplicationContext());
+		textView.setLayoutParams(new LayoutParams(120, 40));
+		
+		textView.setTextColor(Color.BLUE);
+		textView.setText("$"+cas.getPrice());
+		textView.setIncludeFontPadding(false);
+		layout.addView(textView);
+		
+		layout.setOnClickListener( new OnClickListener() {
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.activity_caskets_display, menu);
-    return true;
-  }
+            @Override
+            public void onClick(View imageView) {
+            	initializeImageView(cas);
+            }
+        });
+		return layout;
+	}
 
-  @Override
-  public View makeView() {
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_caskets_display, menu);
+		return true;
+	}
+	
+	public void onClick(View view){
+		AndroidUtilities.setBitmapToImageView(
+				(ImageView) findViewById(R.id.centerCasket), Bitmap.createBitmap(view.getWidth(), view.getHeight(),Bitmap.Config.ARGB_8888));
+		
+	}
 
-    ImageView centerImage = new ImageView(this);
-    centerImage.setBackgroundColor(0xFF000000);
-    centerImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
-    centerImage.setLayoutParams(new ImageSwitcher.LayoutParams(LayoutParams.FILL_PARENT,
-            LayoutParams.FILL_PARENT));
-
-    return centerImage;
-
-  }
-
-  class ImageAdapter extends BaseAdapter {
-
-    private Context context;
-
-    ImageAdapter(Context c) {
-      super();
-      context = c;
-    }
-
-    @Override
-    public int getCount() {
-      return caskets.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-      return position;
-    }
-
-    @Override
-    public long getItemId(int position) {
-      return position;
-    }
-
-    @Override
-    public View getView(int position, View v, ViewGroup vg) {
-
-      ImageView view = null;
-
-      if (v == null) {
-        view = new ImageView(context);
-        AndroidUtilities.setBitmapToImageView(view, caskets.get(position).getImage());
-        view.setLayoutParams(new Gallery.LayoutParams(150, 120));
-        view.setScaleType(ImageView.ScaleType.FIT_XY);
-        RelativeLayout borderImg = new RelativeLayout(context);
-        borderImg.setPadding(1, 1, 1, 1);
-        borderImg.setBackgroundColor(0xff000000);
-        borderImg.addView(view);
-        return borderImg;
-      } else
-        view = (ImageView) v;
-
-      return view;
-    }
-  }
 }
-
