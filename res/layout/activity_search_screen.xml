@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/external_material" />
+            android:text="@string/exterior_material" />
 
         <Spinner
             android:id="@+id/extMaterialSpinner"
@@ -20,16 +20,15 @@
     </TableRow>
 
     <TableRow>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/internal_material" />
+            android:text="@string/color" />
 
         <Spinner
-            android:id="@+id/intMaterialSpinner"
+            android:id="@+id/colorSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </TableRow>
@@ -90,6 +89,7 @@
             android:layout_height="wrap_content"
             android:onClick="onSearch"
             android:text="@string/search_caskets" />
+
     </TableRow>
 
 </TableLayout>
