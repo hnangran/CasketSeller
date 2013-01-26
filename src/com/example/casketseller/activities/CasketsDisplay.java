@@ -162,34 +162,16 @@
 
 package com.example.casketseller.activities;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import com.example.casketseller.R;
-import com.example.casketseller.R.layout;
-import com.example.casketseller.R.menu;
 import com.example.casketseller.backend.Casket;
 import com.example.casketseller.utilities.AndroidUtilities;
 import com.example.casketseller.utilities.CasketDownloader;
 import com.example.casketseller.utilities.Constants;
-import com.example.casketseller.utilities.ImageDownloader;
-
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -201,10 +183,10 @@ import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.ViewSwitcher.ViewFactory;
 
+@SuppressWarnings("deprecation")
 public class CasketsDisplay extends Activity implements ViewFactory {
 
   ArrayList<Casket> caskets;

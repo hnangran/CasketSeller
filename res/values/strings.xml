@@ -19,5 +19,6 @@
     <string name="external_material">External Material</string>
     <string name="internal_material">Internal Material</string>
     <string name="title_activity_caskets_display">Caskets</string>
+    <string name="Color">Color</string>
 
 </resources>

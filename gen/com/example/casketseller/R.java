@@ -21,9 +21,9 @@ public final class R {
         public static final int casketsList=0x7f070001;
         public static final int centerCasket=0x7f070002;
         public static final int centerCasketDetails=0x7f070003;
+        public static final int colorSpinner=0x7f07000a;
         public static final int error=0x7f070005;
         public static final int extMaterialSpinner=0x7f070009;
-        public static final int intMaterialSpinner=0x7f07000a;
         public static final int menu_settings=0x7f070010;
         public static final int name=0x7f07000d;
         public static final int password=0x7f070007;
@@ -45,6 +45,7 @@ public final class R {
         public static final int activity_search_screen=0x7f060002;
     }
     public static final class string {
+        public static final int Color=0x7f040012;
         public static final int app_name=0x7f040000;
         public static final int back=0x7f040005;
         public static final int casket_name=0x7f04000e;

@@ -26,10 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/internal_material" />
+            android:text="@string/Color" />
 
         <Spinner
-            android:id="@+id/intMaterialSpinner"
+            android:id="@+id/colorSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </TableRow>
@@ -90,6 +90,7 @@
             android:layout_height="wrap_content"
             android:onClick="onSearch"
             android:text="@string/search_caskets" />
+
     </TableRow>
 
 </TableLayout>
