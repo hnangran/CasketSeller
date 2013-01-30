@@ -10,8 +10,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" 
-            android:text="@string/error"/>
+            android:layout_centerVertical="true"
+            android:text="@string/error" />
+    </TableRow>
+
+    <TableRow>
+    </TableRow>
+
+    <TableRow>
     </TableRow>
 
     <TableRow>
@@ -21,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/user_name" />
+            android:text="@string/user_name"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
             android:id="@+id/username"
@@ -38,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/password" />
+            android:text="@string/password"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
             android:id="@+id/password"
@@ -53,8 +61,8 @@
 
         <Button
             android:id="@+id/buttonlogin"
-            android:text="@string/login"
-            android:onClick="onLogin"/>
+            android:onClick="onLogin"
+            android:text="@string/login" />
     </TableRow>
 
 </TableLayout>

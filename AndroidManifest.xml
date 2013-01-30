@@ -39,7 +39,8 @@
         </activity>
         <activity
             android:name="com.example.casketseller.activities.CasketsDisplay"
-            android:label="@string/title_activity_caskets_display" >
+            android:label="@string/title_activity_caskets_display"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="com.example.casketseller.activities.CasketsDisplay" />
 

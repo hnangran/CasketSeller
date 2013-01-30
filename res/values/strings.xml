@@ -14,13 +14,15 @@
     <string name="password">Password</string>
     <string name="error">Incorrect user name or password</string>
     <string name="title_activity_search_screen">Search for caskets</string>
-    <string name="price_from">Price from</string>
+    <string name="price_range">Price range</string>
     <string name="price_to">to</string>
     <string name="casket_name">Casket name</string>
     <string name="internal_material">Internal Material</string>
     <string name="title_activity_caskets_display">Caskets</string>
     <string name="exterior_material">Exterior Material</string>
+
     <string-array name="casketColors">
+        <item></item>
         <item>Blue</item>
         <item>Green</item>
         <item>Silver</item>
@@ -28,7 +30,8 @@
         <item>Pink</item>
         <item>Brown</item>
     </string-array>
-     <string-array name="extMaterials">
+    <string-array name="extMaterials">
+        <item></item>
         <item>18 gauge</item>
         <item>20 gauge</item>
         <item>Stainless</item>
