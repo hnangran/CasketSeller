@@ -6,7 +6,7 @@ public class Casket {
 
   private String exteriorMaterial;
 
-  private String interiorMaterial;
+  private String color;
 
   private String name;
 
@@ -14,28 +14,32 @@ public class Casket {
 
   private String url;
 
+  private String sdCardPath;
+
   private Bitmap image;
-  
-  public Casket(){}
-  
-  public Casket(String exteriorMaterial, String interiorMaterial, String name, double price,
-          String url) {
-    super();
-    this.exteriorMaterial = exteriorMaterial;
-    this.interiorMaterial = interiorMaterial;
-    this.name = name;
-    this.price = price;
-    this.url = url;
+
+  public Casket() {
   }
 
-  public Casket(String exteriorMaterial, String interiorMaterial, String name, double price,
-          String url, Bitmap image) {
+  public Casket(String exteriorMaterial, String color, String name, double price, String url, String sdCardPath) {
     super();
     this.exteriorMaterial = exteriorMaterial;
-    this.interiorMaterial = interiorMaterial;
+    this.color = color;
     this.name = name;
     this.price = price;
     this.url = url;
+    this.setSdCardPath(sdCardPath);
+  }
+
+  public Casket(String exteriorMaterial, String color, String name, double price, String url, String sdCardPath,
+          Bitmap image) {
+    super();
+    this.exteriorMaterial = exteriorMaterial;
+    this.color = color;
+    this.name = name;
+    this.price = price;
+    this.url = url;
+    this.setSdCardPath(sdCardPath);
     this.image = image;
   }
 
@@ -47,12 +51,12 @@ public class Casket {
     this.exteriorMaterial = exteriorMaterial;
   }
 
-  public String getInteriorMaterial() {
-    return interiorMaterial;
+  public String getColor() {
+    return color;
   }
 
-  public void setInteriorMaterial(String interiorMaterial) {
-    this.interiorMaterial = interiorMaterial;
+  public void setColor(String color) {
+    this.color = color;
   }
 
   public String getName() {
@@ -85,6 +89,52 @@ public class Casket {
 
   public void setImage(Bitmap image) {
     this.image = image;
+  }
+
+  public String getSdCardPath() {
+    return sdCardPath;
+  }
+
+  public void setSdCardPath(String sdCardPath) {
+    this.sdCardPath = sdCardPath;
+  }
+
+  public boolean equals(Object o) {
+
+    boolean casketMatch = false;
+
+    Casket c = (Casket) o;
+
+    if (c != null) {
+
+      if (c.getExteriorMaterial() != null && c.getExteriorMaterial().length() != 0)
+        if (this.exteriorMaterial.equals(c.getExteriorMaterial()))
+          casketMatch = true;
+        else
+          return false;
+      if (c.getColor() != null && c.getColor().length() != 0)
+        if (this.color.equals(c.getColor()))
+          casketMatch = true;
+        else
+          return false;
+      if (c.getName() != null && c.getName().length() != 0)
+        if (this.name.equals(c.getName()))
+          casketMatch = true;
+        else
+          return false;
+
+    }
+
+    return casketMatch;
+
+  }
+
+  public boolean isEmpty() {
+
+    if ((exteriorMaterial == null || exteriorMaterial.length() == 0)
+            && (color == null || color.length() == 0) && (name == null || name.length() == 0))
+      return true;
+    return false;
   }
 
 }
